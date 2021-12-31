@@ -1,8 +1,18 @@
+
 import { ReactNode } from 'react';
 
-import { Platform, Text } from 'react-native';
+import { Platform } from 'react-native';
 
-import { Container } from './styles';
+import { BackButton } from '@components/BackButton';
+import { Photo } from '@components/Photo';
+
+import { 
+  Container,
+  Header,
+  Title,
+  DeleteButton,
+  DeleteButtonText
+ } from './styles';
 
 interface ProductProps {
   children: ReactNode;
@@ -11,7 +21,16 @@ interface ProductProps {
 const Product = () => {
   return (
     <Container behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
-      <Text>Product</Text>
+      <Header>
+        <BackButton />
+        <Title>Cadastrar</Title>
+        <DeleteButton>
+          <DeleteButtonText>Deletar</DeleteButtonText>
+        </DeleteButton>
+      </Header>
+
+      <Photo uri={null}  />
+
     </Container>
   );
 };

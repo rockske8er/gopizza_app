@@ -34,8 +34,7 @@ export const AuthContext = createContext({} as AuthContextData)
 
 const USER_COLLECTION = "@gopizza";
 
-const AuthProvider = ({children}: AuthContextProps) => {
-
+const AuthProvider = ({ children }: AuthContextProps) => {
   const [isLogging, setIsLogging] = useState(false);
   const [user, setUser] = useState<User | null>(null)
 
